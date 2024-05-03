@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  .item {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .item:nth-child(odd) {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .item:nth-child(odd) {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .item:nth-child(even) {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .grid-container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 1280px) {
+    .grid-container {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    
+    .item {
+      width: calc(100%/8);
+    }
+    
+    .item:nth-child(odd) {
+      width: calc(100%/8 * 4);
+      background-color: #ddd;
+    }
+  }
+  
